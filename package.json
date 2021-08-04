@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple unsplash gallery built with express.js node and handlebars",
   "main": "index.js",
-  "author": "Ndi Dodley <dodleybusiness@gmail.com>",
+  "author": "dodleyandu 88383651+ndidodley@users.noreply.github.com",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
@@ -13,5 +13,6 @@
     "handlebars": "^4.7.7",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": "https://github.com/ndidodley/unsplash-gallery.git"
 }

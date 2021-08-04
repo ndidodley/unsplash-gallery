@@ -47,7 +47,7 @@ async function getImages(query, limit, orientation) {
 }
 
 app.get('/', (req, res) => {
-    getImages('cobra' , 15, 'portrait').then(
+    getImages('dalmatian' , 15, 'portrait').then(
         (x) => {
             try {
                 let results = x.data;
