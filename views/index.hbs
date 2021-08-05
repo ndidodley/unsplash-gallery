@@ -5,31 +5,62 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <link rel="stylesheet" href="/public/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="/public/css/theme.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <title>Unsplash Gallery</title>
 
 
 </head>
 <body class="container-fluid">
 <div class="p-5 bg-light">
-    <h1 class="display-4">
-        Unsplash Gallery
-    </h1>
-    <span class="text-end blockquote-footer fst-italic">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h1 class="display-6 d-inline-block">
+                Unsplash Gallery
+            </h1>
+            <span class="text-end blockquote-footer fst-italic">
                 By Ndi Dodley
             </span>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <form action="/" method="post">
+                <div class="form-group row mb-2">
+                    <label class="col-sm-7 text-end">What will you love to see</label>
+                    <div class='col-sm-5'>
+                        <input type="text"
+                               class="form-control"
+                               id="query" name="query" autocomplete='off' required>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label class="col-sm-7 text-end">Number of images to fetch</label>
+                    <div class="col-sm-5">
+                        <input type="number" class="form-control" id="limit" name="limit" min="1"
+                               max="25">
+                    </div>
+                    <div class="justify-content-end d-flex mt-2">
+                        <input type="submit" value="Submit" class="btn btn-success btn-sm">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 <div class="grid ">
     <div class="row">
-        {{#each results}}
-            <div class="d-flex justify-content-center item col-md-6 col-lg-4 mb-3">
-                <a href="{{links.html}}" target="_blank">
-                    <img src="{{urls.small}}" alt="{{alt_description}}"
-                         title="{{description}}" class="img-fluid rounded-2">
-                </a>
-            </div>
-        {{/each}}
+        {{#if results}}
+            {{#each results}}
+                <div class="d-flex justify-content-center item col-md-6 col-lg-4 mb-3">
+                    <a href="{{links.html}}" target="_blank">
+                        <img src="{{urls.small}}" alt="{{alt_description}}"
+                             title="{{description}}" class="img-fluid rounded-2">
+                    </a>
+                </div>
+            {{/each}}
+        {{else}}
+            <p class="text-center display-5">
+                Sorry, we couldn't get requested resource
+            </p>
+        {{/if}}
     </div>
 </div>
 
